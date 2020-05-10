@@ -13,4 +13,4 @@ into the containers.
 1. *Optional*: If you choose to opt-in for boot diagnostics for the scaleset, an appropriate storage account is needed.
 
 # Example usage
-An exemplary workspace calling this module can be found [here](https://google.de)
+An exemplary workspace calling this module can be found [here](https://github.com/ksandermann/terraform-workspace-examples/tree/master/azure-docker-scaleset)
