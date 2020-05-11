@@ -5,7 +5,7 @@ Input parameters are the docker-compose file which should be used as well as, op
 into the containers.
 
 The highly-available setup includes:
-1. A zone-redudant scaleset behind a zone-redudant loadbalancer
+1. A zone-redundant scaleset behind a zone-redundant loadbalancer
 1. Healthchecks of the containers
 1. Automatic OS-upgrades
 1. Automatic instance repair
