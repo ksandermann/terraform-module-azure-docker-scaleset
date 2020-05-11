@@ -4,6 +4,13 @@ placed behind an Azure Loadbalancer.
 Input parameters are the docker-compose file which should be used as well as, optionally, configuration files to mount 
 into the containers.
 
+The highly-available setup includes:
+1. A zone-redudant scaleset behind a zone-redudant loadbalancer
+1. Healthchecks of the containers
+1. Automatic OS-upgrades
+1. Automatic instance repair
+1. Autoscaling based on CPU metric
+
 # Prerequisites
 1. Resource Groups for the loadbalancer and the scaleset. Can be the same.
 1. A VNET to place both the loadbalancer and the scaleset.
