@@ -53,10 +53,10 @@ resource "azurerm_lb_rule" "this" {
   for_each            = var.loadbalancer_ports
   resource_group_name = azurerm_lb.this.resource_group_name
   loadbalancer_id     = azurerm_lb.this.id
-  name                = format("%s%s%s", each.key, each.value.protocol, each.value.port)
+  name                = format("%s%s%s", each.key, each.value.protocol, each.value.frontend_port)
   protocol            = each.value.protocol
-  frontend_port       = each.value.port
-  backend_port        = each.value.port
+  frontend_port       = each.value.frontend_port
+  backend_port        = each.value.backend_port
   //workaround as referencing dynamic objects is buggy
   frontend_ip_configuration_name = var.loadbalancer_enable_public_ip ? format("%s%s", var.loadbalancer_name, "PUBIP001") : format("%s%s", var.loadbalancer_name, "PRIVIP001")
   backend_address_pool_id        = azurerm_lb_backend_address_pool.this.id

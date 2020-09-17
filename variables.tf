@@ -50,8 +50,9 @@ variable "loadbalancer_subnet_name" {
 
 variable "loadbalancer_ports" {
   type = map(object({
-    port     = number
-    protocol = string
+    frontend_port = number
+    backend_port  = number
+    protocol      = string
   }))
   description = "Ports that the loadbalancer should pass-through to the scaleset instances. These should be used by the containers inside the docker-compose file."
 }
